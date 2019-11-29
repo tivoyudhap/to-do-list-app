@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/addtask_task_relativelayout"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addtask_addtask_textview"
+            android:text="Add task"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/addtask_task_edittext"
+            android:layout_below="@+id/addtask_addtask_textview"
+            android:hint="Write your task here!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addtask_submission_relativelayout"
+        android:layout_below="@+id/addtask_task_relativelayout"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addtask_submission_textview"
+            android:text="Submission of the task"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/addtask_submissiondate_textview"
+            android:layout_below="@+id/addtask_submission_textview"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            android:text="Tap here to set time"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addtask_priorities_relativelayout"
+        android:layout_below="@+id/addtask_submission_relativelayout"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addtask_priorities_textview"
+            android:text="Set Priorities"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/addtask_buttonwrapper_linearlayout"
+            android:orientation="horizontal"
+            android:layout_below="@+id/addtask_priorities_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/addtask_lowpriorities_button"
+                android:layout_weight="1"
+                android:text="Low"
+                android:background="@drawable/custom_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addtask_mediumpriorities_button"
+                android:layout_weight="1"
+                android:text="Middle"
+                android:background="@drawable/custom_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addtask_highpriorities_button"
+                android:layout_weight="1"
+                android:text="High"
+                android:background="@drawable/custom_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/addtask_addtask_button"
+        android:layout_alignParentBottom="true"
+        android:text="Add Task"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

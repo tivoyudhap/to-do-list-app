@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Personal Todo List</string>
+
+    <string name="facebook_app_id">751402361712600</string>
+    <string name="hash_code">KzI8H0tdHhE6JOZTVFosSBsSZMQ=</string>
+    <string name="onesignal_app_id">9ca7e9c0-331f-4c10-be3e-3406f4939c47</string>
+
+    <string name="task_must_longer_than_5">The task must longer than 5 character</string>
+    <string name="tap_here_to_set_time">Tap here to set time</string>
+    <string name="please_set_the_time">Please set the time</string>
+    <string name="please_set_priority">Please set the priority</string>
+    <string name="added">Added : </string>
+    <string name="finish">Finish : </string>
+    <string name="submission">Submission : </string>
+    <string name="username_must_longer_than_5">The username must be longer than 5 character</string>
+    <string name="password_must_longer_than_5">The password must be longer than 5 character</string>
+    <string name="user_not_recorded">Username / password is not recorded in the DB</string>
+    <string name="success_to_delete_task">Success to delete task!</string>
+    <string name="failed_to_delete_task">Failed to delete task!</string>
+</resources>
