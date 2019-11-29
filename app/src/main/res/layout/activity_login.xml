@@ -17,7 +17,7 @@
         android:textSize="17dp"
         android:layout_marginBottom="50dp" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/main_username_textinputlayout"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -32,9 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/main_password_textinputlayout"
         android:layout_above="@+id/login_facebooklogin_loginbutton"
         android:layout_marginBottom="90dp"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
         android:orientation="horizontal"
