@@ -27,10 +27,6 @@ class CAddTaskController(private val activity: JAddTaskActivity) {
     private var statusMed = 0
     private var statusHigh = 0
     private var priorStatus = 0
-    private var year = 0
-    private var month = 0
-    private var day = 0
-    var simpleDateFormat = SimpleDateFormat("dd-MMMM-yyyy", Locale.US)
 
     @BindString(R.string.task_must_longer_than_5)
     lateinit var warningTask: String
@@ -95,36 +91,20 @@ class CAddTaskController(private val activity: JAddTaskActivity) {
         }
     }
 
-    fun onCreateDialog(id: Int, args: Bundle?): Dialog? {
-        if (id == Constant.TAG_CALENDAR) {
-            val calendar = Calendar.getInstance()
-            year = calendar[Calendar.YEAR]
-            month = calendar[Calendar.MONTH]
-            day = calendar[Calendar.DATE]
-            return DatePickerDialog(activity, datePickerDialog, year, month, day)
-        }
-        return null
-    }
-
-    private val datePickerDialog = OnDateSetListener { datePicker, i, i1, i2 ->
-        val da = "" + i2 + "-" + (i1 + 1) + "-" + i
-        activity.submissionDateTextView?.text = simpleDateFormat.format(Date(getTimeLong(da)))
-    }
-
     private fun addTask() {
         when {
             activity.taskEditText?.text.toString().length < 5 -> {
                 activity.showToast(warningTask)
             }
-            activity.submissionDateTextView?.text == warningTapToSetTime -> {
+            activity.submissionDateTextView.text == warningTapToSetTime -> {
                 activity.showToast(warningSetTime)
             }
             priorStatus == 0 -> {
                 activity.showToast(warningSetPriority)
             }
             else -> {
-                val task = activity.taskEditText?.text.toString()
-                val submission = activity.submissionDateTextView?.text.toString()
+                val task = activity.taskEditText.text.toString()
+                val submission = activity.submissionDateTextView.text.toString()
                 val priority = priorStatus
                 val taskModel = setUpTaskModel(task, Date(submission).time, priority, Constant.TAG_UNFINISH_ADDTASK)
                 val id = Storage(activity).addTransaction(taskModel).toInt()
@@ -151,17 +131,6 @@ class CAddTaskController(private val activity: JAddTaskActivity) {
         taskModel.priority = priority
         taskModel.submission = submission
         return taskModel
-    }
-
-    private fun getTimeLong(date: String): Long {
-        val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.US)
-        try {
-            val d = dateFormat.parse(date)
-            return d.time
-        } catch (e: ParseException) {
-            e.printStackTrace()
-        }
-        return 0
     }
 
     @OnClick(R.id.addtask_lowpriorities_button)

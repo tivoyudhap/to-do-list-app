@@ -4,6 +4,7 @@ import android.content.Intent
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageButton
+import android.widget.Toast
 import butterknife.BindView
 import com.mastip.personaltodolist.R
 import com.mastip.personaltodolist.screen.activity.base.MyBaseActivity
@@ -30,6 +31,7 @@ class JMainMenuActivity : MyBaseActivity() {
 
     override fun initiateItem() {
         controller = CMainMenuController(this)
+        Toast.makeText(this, "You can swipe right the task to make task done", Toast.LENGTH_LONG).show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
